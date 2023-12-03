@@ -50,7 +50,7 @@
         <h1 class="title">
             On  Optimal Spatial Sampling for Learning SDF with Positional Encoding
         </h1>
-        <section class="authors">
+        <section class="authors"  >
           <ul>
             <li>
               <span><a href="https://carrie-lin.github.io/">Guying Lin</a><sup>1</sup></span>
@@ -110,53 +110,35 @@
         </section>
         <section class="affiliations">
           <ul>
-            <li><sup>1</sup>The University of Hong Kong,</li>
-            <li><sup>2</sup>The University of British Columbia,</li>
-            <li><sup>3</sup>City University of Hong Kong,</li>
-            <li><sup>4</sup>Zhejiang University,</li>
-            <li><sup>5</sup>Texas A&M University</li>
+            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>1</sup>The University of Hong Kong,</li>
+            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>2</sup>The University of British Columbia,</li>
+            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>3</sup>City University of Hong Kong,</li>
+            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>4</sup>Zhejiang University,</li>
+            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>5</sup>Texas A&M University</li>
           </ul>
         </section>
         <section class="links">
           <ul>
-            <a href="" rel="noreferrer" target="_blank">
-              <li>
-                <span class="icon"> <img src="./public/paper.svg" /> </span
-                ><span>Paper</span>
-              </li>
-            </a>
-
-            <a
-              href=""
-              rel="noreferrer"
-              target="_blank"
-            >
-              <li>
-                <span class="icon">
-                  <img src="./public/github.svg" />
-                </span>
-                <span>Code</span>
-              </li>
-            </a>
+          
             <!-- <a><li>Video</li></a> -->
           </ul>
         </section>
         <a class="anchor" id="abstract-a"></a>
         <h2>Abstract</h2>
         <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: justify">
-          Coming soon 
-        </p>
+ 
+    Neural implicit fields, such as the signed distance field (SDF) of a shape, emerge as a powerful tool for many applications like representing a 3D shape and performing collision detection of these shapes. Typically, implicit fields are encoded by Multilayer Perceptrons (MLP), which brings advantages of compactness, smoothness, and topological flexibility. However, it often fails to capture high-frequency details due to the low-frequency essence of MLPs.
+    To overcome this, sinusoidal positional encoding (PE) has become a popular and effective approach to enhancing the ability of the MLP to model high-frequency details in the target implicit field. However, a notable side effect of introducing PE to MLP is the noisy artifacts present in the learned implicit fields. The higher is the frequency components in PE, the more severe is this side effect. While increasing the sampling rate could in general mitigate these artifacts, in this paper we aim to provide an explanation for this adverse phenomenon through the lens of Fourier analysis and devise a tool for recommending the appropriate sampling rate necessary for learning an accurate neural implicit field without the undesirable side effects of using the PE. 
+    </p>    
+    <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: justify"></pclass>
+    Specifically, we define the intrinsic frequency of a neural network (with or without PE) and propose a simple yet effective method for computing this intrinsic frequency of a given network based on Fourier analysis of the network with randomized weights. It is observed that a PE-equipped MLP has an intrinsic frequency much higher than the highest frequency component in the PE layer. Based on this observation, we recommend that the training sampling rate be determined by the intrinsic frequency of the PE-equipped MLP network.  We show empirically that this sampling rate is also sufficient in the sense that further increasing the sampling rate would not further noticeably decrease the fitting error. We validate our conclusions and methods in the setting of fitting SDF and show that the training strategy recommended by our study leads to superior performance than the existing methods. 
+      
+  </p>
+  <img style="position:relative;top: 15px;" src='public/images/abstract.png' width="180">
+
       </section>
 
 
-      <section class="citation">
-        <h2>Bibtex</h2>
-        
-        <pre>
-<code>
-    Coming soon 
-</code></pre>
-      </section>
       <br />
 
     </main>

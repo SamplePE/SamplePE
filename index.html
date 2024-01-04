@@ -48,7 +48,7 @@
     <main class="content">
       <section class="heading" style="text-align: center!important;">
         <h1 class="title">
-            On  Optimal Spatial Sampling for Learning SDF with Positional Encoding
+          On Optimal Sampling for Learning SDF Using MLPs Equipped with Positional Encoding
         </h1>
         <section class="authors"  >
           <ul>
@@ -112,29 +112,29 @@
           <ul>
             <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>1</sup>The University of Hong Kong,</li>
             <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>2</sup>The University of British Columbia,</li>
-            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>3</sup>City University of Hong Kong,</li>
+            <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>3</sup>The City University of Hong Kong,</li>
             <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>4</sup>Zhejiang University,</li>
             <li style="font-family: 'Times New Roman', Arial;font-size: 18px; text-align: justify"><sup>5</sup>Texas A&M University</li>
           </ul>
         </section>
         <section class="links">
           <ul>
-          
-            <!-- <a><li>Video</li></a> -->
+            <a href="https://arxiv.org/pdf/2401.01391.pdf" rel="noreferrer" target="_blank">
+              <li>
+                <span class="icon"> <img src="./public/paper.svg" /> </span
+                ><span>Paper</span>
+              </li>
+            </a>
           </ul>
         </section>
         <a class="anchor" id="abstract-a"></a>
         <h2>Abstract</h2>
         <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: justify">
  
-    Neural implicit fields, such as the signed distance field (SDF) of a shape, emerge as a powerful tool for many applications like representing a 3D shape and performing collision detection of these shapes. Typically, implicit fields are encoded by Multilayer Perceptrons (MLP), which brings advantages of compactness, smoothness, and topological flexibility. However, it often fails to capture high-frequency details due to the low-frequency essence of MLPs.
-    To overcome this, sinusoidal positional encoding (PE) has become a popular and effective approach to enhancing the ability of the MLP to model high-frequency details in the target implicit field. However, a notable side effect of introducing PE to MLP is the noisy artifacts present in the learned implicit fields. The higher is the frequency components in PE, the more severe is this side effect. While increasing the sampling rate could in general mitigate these artifacts, in this paper we aim to provide an explanation for this adverse phenomenon through the lens of Fourier analysis and devise a tool for recommending the appropriate sampling rate necessary for learning an accurate neural implicit field without the undesirable side effects of using the PE. 
-    </p>    
-    <p class="abstract" style="font-family: 'Times New Roman', Arial; text-align: justify"></pclass>
-    Specifically, we define the intrinsic frequency of a neural network (with or without PE) and propose a simple yet effective method for computing this intrinsic frequency of a given network based on Fourier analysis of the network with randomized weights. It is observed that a PE-equipped MLP has an intrinsic frequency much higher than the highest frequency component in the PE layer. Based on this observation, we recommend that the training sampling rate be determined by the intrinsic frequency of the PE-equipped MLP network.  We show empirically that this sampling rate is also sufficient in the sense that further increasing the sampling rate would not further noticeably decrease the fitting error. We validate our conclusions and methods in the setting of fitting SDF and show that the training strategy recommended by our study leads to superior performance than the existing methods. 
+          Neural implicit fields, such as the neural signed distance field (SDF) of a shape, have emerged as a powerful representation for many applications, e.g., encoding a 3D shape and performing collision detection. Typically, implicit fields are encoded by Multi-layer Perceptrons (MLP) with positional encoding (PE) to capture high-frequency geometric details. However, a notable side effect of such PE-equipped MLPs is the noisy artifacts present in the learned implicit fields. While increasing the sampling rate could in general mitigate these artifacts, in this paper we aim to explain this adverse phenomenon through the lens of Fourier analysis. We devise a tool to determine the appropriate sampling rate for learning an accurate neural implicit field without undesirable side effects. Specifically, we propose a simple yet effective method to estimate the intrinsic frequency of a given network with randomized weights based on the Fourier analysis of the network's responses. It is observed that a PE-equipped MLP has an intrinsic frequency much higher than the highest frequency component in the PE layer. Sampling against this intrinsic frequency following the Nyquist-Sannon sampling theorem allows us to determine an appropriate training sampling rate. We empirically show in the setting of SDF fitting that this recommended sampling rate is sufficient to secure accurate fitting results, while further increasing the sampling rate would not further noticeably reduce the fitting error. Training PE-equipped MLPs simply with our sampling strategy leads to performances superior to the existing methods.
       
   </p>
-  <img style="position:relative;top: 15px;" src='public/images/result_geo.png' width="900">
+  <img style="position:relative;top: 15px;" src='public/images/teaser1.png' width="900">
 
       </section>
 
